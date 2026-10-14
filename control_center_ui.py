@@ -277,7 +277,10 @@ def render_live_camera(camera, lang):
 
     video = resolve_video_path(camera.get("video_path"))
     if video is not None:
-        st.video(str(video))
+        st.video(
+            video.read_bytes(),
+            format="video/mp4",
+        )
     else:
         st.info(t["video_missing"])
 
@@ -295,7 +298,10 @@ def render_accident_recording(camera, lang):
 
     video = resolve_video_path(camera.get("video_path"))
     if video is not None:
-        st.video(str(video))
+        st.video(
+            video.read_bytes(),
+            format="video/mp4",
+        )
     else:
         st.info(t["video_missing"])
 
