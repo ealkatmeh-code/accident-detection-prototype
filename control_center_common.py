@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from datetime import datetime
 import uuid
@@ -7,21 +6,14 @@ import pandas as pd
 from pandas.errors import EmptyDataError
 
 
-ROOT = Path(
-    r"C:\Users\LENOVO\Desktop\test1"
-)
-
-
-PROTOTYPE_DIR = (
-    ROOT
-    / "prototype"
-)
-
+PROTOTYPE_DIR = Path(__file__).resolve().parent
 
 DEMO_PATH = (
     PROTOTYPE_DIR
     / "manager_10_camera_demo.csv"
 )
+
+ROOT = PROTOTYPE_DIR
 
 
 DECISIONS_PATH = (
